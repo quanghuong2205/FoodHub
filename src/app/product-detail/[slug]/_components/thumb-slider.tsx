@@ -5,7 +5,6 @@ import { Flex } from 'antd';
 import classNames from 'classnames';
 import ServerImage from '@/components/server-image';
 import { useEffect, useRef, useState } from 'react';
-import { listenEvent } from '@/utils/event';
 
 interface IThumbSliderProps {
   productThumb: string;
@@ -24,16 +23,14 @@ function ThumbSlider({ productThumb, variants }: IThumbSliderProps) {
 
   /* Listen event to active thumb from variant */
   useEffect(() => {
-    const event = listenEvent(
-      'variant::thumb',
-      ({ detail }) => {
-        setActiveThumb(detail.url);
-        variantThumb.current = detail.url;
-      },
-      document,
-    );
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      setActiveThumb(detail.url);
+      variantThumb.current = detail.url;
+    };
+    document.addEventListener('variant::thumb', handler);
 
-    return event;
+    return () => {};
   }, []);
 
   return (
