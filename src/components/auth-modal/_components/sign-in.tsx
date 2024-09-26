@@ -28,7 +28,7 @@ function SignInForm({ onCloseModal }: ISignInFormProps) {
   } = useForm({ resolver: signInResolver, mode: 'onBlur' });
 
   /* Request state */
-  const { isMutating, trigger: requestSignIn, data: signInData, error } = useSignIn();
+  const { isMutating, trigger: requestSignIn, data: signInData, error, reset } = useSignIn();
 
   /* Handle submit form */
   const onSubmit = async (data: ISignInApiArgs) => {
@@ -50,11 +50,12 @@ function SignInForm({ onCloseModal }: ISignInFormProps) {
       saveToLocalStorage(TOKEN_KEY, token);
 
       sendNotify('Đăng nhập', 'success', 'đăng nhập thành công');
+      reset();
     }
 
     /* Close modal */
     onCloseModal?.();
-  }, [signInData, sendNotify, setUser, onCloseModal]);
+  }, [signInData, sendNotify, setUser, onCloseModal, reset]);
 
   /* Has an error */
   useEffect(() => {
