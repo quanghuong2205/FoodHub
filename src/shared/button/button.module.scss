@@ -1,0 +1,29 @@
+.primary {
+  font-size: 1.4rem !important;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.secondary {
+  background: #fff !important;
+  font-size: 1.4rem !important;
+  color: inherit !important;
+  border-color: #d2d1d6 !important;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.outline {
+  font-size: 1.4rem !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: #d2d1d6 !important;
+
+  &:hover {
+    border-color: #000 !important;
+    color: inherit !important;
+  }
+}

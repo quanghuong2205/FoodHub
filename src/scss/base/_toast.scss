@@ -1,0 +1,48 @@
+/* Override css variables of react-toastify lib */
+html {
+  --toastify-icon-color-success: red !important;
+  --toastify-toast-bd-radius: 999px !important;
+  --toastify-toast-min-height: 54px !important;
+}
+
+/* Override styles of react-toastify lib */
+.Toastify__toast {
+  padding: 8px 12px !important;
+}
+
+.Toastify__toast-body {
+  font-size: 1.5rem !important;
+  column-gap: 6px Imp !important;
+}
+
+.Toastify__close-button {
+  align-self: center !important;
+  margin-right: 4px;
+}
+
+/* Toast variants */
+.toast--overlay.Toastify__toast--success {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid #fff !important;
+  --toastify-icon-color-success: #fff !important;
+  color: #fff !important;
+}
+
+.toast--overlay.Toastify__toast--error {
+  background: rgba(255, 0, 0, 0.4) !important;
+  border: 1px solid #fff !important;
+  --toastify-icon-color-success: #fff !important;
+  color: #fff !important;
+}
+
+.toast--overlay.Toastify__toast--warning {
+  background: rgba(255, 255, 0, 0.4) !important;
+  border: 1px solid #fff !important;
+  --toastify-icon-color-success: #fff !important;
+  color: #fff !important;
+}
+
+.toast--overlay .toastify__close-button {
+  opacity: 0.8;
+  color: #fff !important;
+}

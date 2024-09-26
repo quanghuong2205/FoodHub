@@ -1,0 +1,37 @@
+.btn {
+  border-radius: 6px;
+  position: relative;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0 12px;
+
+  font-size: 1.5rem;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.pri-btn {
+  color: #fff;
+  background-color: red;
+}
+
+.pri-btn:hover {
+  opacity: 1;
+  background-color: rgb(193, 17, 25);
+}
+
+.outline-btn {
+  border: 1px solid #d2d1d6;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.disable-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}

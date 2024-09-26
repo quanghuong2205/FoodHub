@@ -1,0 +1,58 @@
+@use '@/scss/abstracts';
+
+.sidebar {
+  height: 100%;
+  padding: 32px 0;
+
+  @include abstracts.mediaquery(md) {
+    padding: 20px 0;
+  }
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 48px;
+  font-size: 2rem;
+}
+
+.item {
+  position: relative;
+  padding: 20px 38px 20px 38px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 70%;
+    width: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #09fb5b;
+    display: none;
+    border-radius: 0 6px 6px 0;
+  }
+
+  &--active::before {
+    display: block;
+  }
+
+  &-icon {
+    width: 23px;
+    height: 23px;
+    position: relative;
+
+    @include abstracts.mediaquery(md) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    @include abstracts.mediaquery(md) {
+      font-size: 1.6rem;
+    }
+  }
+}

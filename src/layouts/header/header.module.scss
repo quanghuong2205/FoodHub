@@ -1,0 +1,109 @@
+@use '@/scss/abstracts';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  &-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    @include abstracts.mediaquery(md) {
+      margin-left: 0;
+    }
+  }
+
+  &-badge {
+    display: flex !important;
+
+    & sup {
+      @include abstracts.mediaquery(md) {
+        font-size: 0.8rem !important;
+      }
+    }
+  }
+
+  &-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include abstracts.mediaquery(md) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  max-width: 100%;
+
+  @include abstracts.mediaquery(md) {
+    display: none;
+  }
+}
+
+.menu-mobile {
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.user {
+  position: relative;
+  top: -2px;
+  &-avatar {
+    width: 34px;
+    height: 34px;
+    position: relative;
+    display: flex;
+  }
+
+  &-dropdown {
+    min-width: 180px;
+
+    & a,
+    & button {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+  }
+}
+
+.logo {
+  font-size: 1.7rem;
+  margin-top: -5px;
+}
+
+.ctrls {
+  & > button {
+    height: 36px !important;
+    padding: 4px 20px !important;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1.3rem !important;
+  }
+}
+
+.signout {
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  height: 100% !important;
+  width: 100% !important;
+  justify-content: flex-start !important;
+
+  &:hover {
+    background-color: transparent !important;
+  }
+}

@@ -1,0 +1,12 @@
+.order-tab {
+  & .ant-tabs-nav-wrap {
+    background: #fff !important;
+    border-radius: 6px !important;
+  }
+
+  & .ant-tabs-tab {
+    padding: 14px 36px !important;
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+  }
+}
